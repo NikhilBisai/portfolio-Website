@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikhil Bisai | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #00f5d4;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00f5d4;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .hero h2 span {
+      color: #00f5d4;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #00f5d4;
+      color: #222;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00c9a7;
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    .section {
+      background: rgba(0, 0, 0, 0.65);
+      margin: 2rem auto;
+      padding: 3rem 2rem;
+      border-radius: 15px;
+      width: 85%;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    .section h2 {
+      color: #00f5d4;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+
+    .skills-list li {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 260px;
+      color: #fff;
+      font-size: 1.1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .skills-list li:hover {
+      transform: scale(1.05);
+      background: rgba(0,245,212,0.2);
+    }
+
+    .skills-list i {
+      color: #00f5d4;
+      font-size: 1.4rem;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+      text-align: left;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: #00f5d4;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00f5d4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Contact */
+    .contact .socials {
+      margin-top: 1rem;
+    }
+
+    .contact .socials a {
+      margin: 0 0.5rem;
+      color: #00f5d4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact .socials a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0,0,0,0.85);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Animations */
+    @keyframes slideUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Nikhil Bisai</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h2>Hello, I'm <span>Nikhil Bisai</span></h2>
+      <p>Application Support Engineer & Data Analytics Enthusiast</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      Entry-level Application Support Engineer with strong problem-solving skills in Python, SQL, and Java. 
+      Experienced in data validation, reporting, and issue analysis through academic projects and internships. 
+      Passionate about building dashboards, documentation, and supporting system reliability with analytics.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li><i class="fab fa-python"></i> Python, Pandas, NumPy</li>
+      <li><i class="fab fa-java"></i> Java, OOPs</li>
+      <li><i class="fas fa-database"></i> SQL, MySQL, MongoDB</li>
+      <li><i class="fas fa-chart-line"></i> Power BI, Matplotlib, Seaborn</li>
+      <li><i class="fas fa-vial"></i> Functional Testing, Reporting</li>
+      <li><i class="fab fa-git-alt"></i> Git, VS Code, PyCharm</li>
+    </ul>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Data & Reporting Support (Intern)</h3>
+      <p><strong>Delhi, Noida | Jan 2025 – May 2025</strong></p>
+      <ul>
+        <li>Managed data validation and reporting ensuring accuracy of datasets.</li>
+        <li>Built dashboards and reports to support decision-making.</li>
+        <li>Contributed to process optimization and error resolution.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Retail Orders SQL Project</h3>
+        <p>Sales trend analysis & customer insights using SQL, Excel & Power BI.</p>
+        <a href="https://github.com/NikhilBisai/Retail-order-of-a-global-mart-sales-data" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Telco Churn Analysis</h3>
+        <p>Customer churn prediction using classification models in Python.</p>
+        <a href="https://github.com/NikhilBisai/Telco-Churn-Dataset-PowerBI" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Zomato Data Analysis</h3>
+        <p>EDA and visualization for food trend insights.</p>
+        <a href="https://github.com/NikhilBisai/Zomato-Data-Analysis" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Flight Fare Prediction</h3>
+        <p>ML regression model for predicting flight fares.</p>
+        <a href="https://github.com/NikhilBisai/Flight_Fare_Prediction" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <p><strong>National Institute of Technology, Agartala</strong> | 2021 – 2025</p>
+    <p>B.Tech in Production Engineering</p>
+    <p><em>Relevant Courses:</em> Operations Research, Statistics, Probability & Queueing Theory, Optimization Techniques, Supply Chain Analytics.</p>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="section">
+    <h2>Achievements & Certifications</h2>
+    <ul>
+      <li>Solved 200+ coding problems on LeetCode & CodeChef.</li>
+      <li>Excel – Basic to Intermediate (Udemy)</li>
+      <li>Machine Learning Basics (Udemy)</li>
+      <li>Python Data Analysis (Udemy)</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>📞 +91 93XXXXXXXX</p>
+    <p>📧 <a href="mailto:nikhilbisai13@gmail.com">nikhilbisai13@gmail.com</a></p>
+    <p>🌍 Andhra Pradesh, India</p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/nikhil-bisai-69b979247/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/NikhilBisai" target="_blank">GitHub</a>
+      <a href="https://leetcode.com/u/Winnermindy/" target="_blank">LeetCode</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Nikhil Bisai. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
